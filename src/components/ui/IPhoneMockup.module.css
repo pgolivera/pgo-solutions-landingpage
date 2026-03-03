@@ -1,0 +1,127 @@
+.mockupContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md);
+}
+
+.iphone {
+  position: relative;
+  width: 280px;
+  height: 570px;
+  background: linear-gradient(135deg, #2a2a3e 0%, #1a1a2e 100%);
+  border-radius: 45px;
+  padding: 12px;
+  box-shadow:
+    0 0 0 2px #3a3a4e,
+    0 0 0 4px #1a1a2e,
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Dynamic Island */
+.dynamicIsland {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+/* Screen */
+.screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 35px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Side buttons */
+.volumeUp,
+.volumeDown,
+.powerButton {
+  position: absolute;
+  background: linear-gradient(180deg, #3a3a4e 0%, #2a2a3e 100%);
+  border-radius: 2px;
+}
+
+.volumeUp {
+  left: -3px;
+  top: 120px;
+  width: 3px;
+  height: 35px;
+}
+
+.volumeDown {
+  left: -3px;
+  top: 165px;
+  width: 3px;
+  height: 35px;
+}
+
+.powerButton {
+  right: -3px;
+  top: 140px;
+  width: 3px;
+  height: 60px;
+}
+
+/* Responsive sizes */
+@media (min-width: 768px) {
+  .iphone {
+    width: 320px;
+    height: 650px;
+    border-radius: 50px;
+    padding: 14px;
+  }
+
+  .dynamicIsland {
+    top: 20px;
+    width: 100px;
+    height: 30px;
+  }
+
+  .screen {
+    border-radius: 40px;
+  }
+
+  .volumeUp {
+    top: 135px;
+    height: 40px;
+  }
+
+  .volumeDown {
+    top: 185px;
+    height: 40px;
+  }
+
+  .powerButton {
+    top: 160px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .iphone {
+    width: 360px;
+    height: 730px;
+    border-radius: 55px;
+    padding: 16px;
+  }
+
+  .dynamicIsland {
+    top: 22px;
+    width: 110px;
+    height: 32px;
+  }
+
+  .screen {
+    border-radius: 44px;
+  }
+}

@@ -4,5 +4,5 @@ import Home from './page'
 
 test('Home renders the title correctly', () => {
   render(<Home />)
-  expect(screen.getByText(/PGO Landing Template/i)).toBeInTheDocument()
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Soluciones digitales/i)
 })

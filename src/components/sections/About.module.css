@@ -1,0 +1,128 @@
+.about {
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  background: var(--color-bg-secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-3xl);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.feature {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-bg-overlay);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.featureTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--color-accent);
+}
+
+.featureDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-bg-overlay);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.statNumber {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .about {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats {
+    gap: var(--spacing-3xl);
+  }
+
+  .stat {
+    min-width: 150px;
+  }
+
+  .statNumber {
+    font-size: var(--font-size-4xl);
+  }
+}
