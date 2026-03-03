@@ -24,6 +24,7 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
     "@playwright/test": "^1.49.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
