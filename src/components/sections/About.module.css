@@ -45,12 +45,21 @@
 
 .feature:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 30px rgba(79, 172, 254, 0.12);
+  border-color: rgba(79, 172, 254, 0.2);
 }
 
 .featureIcon {
-  font-size: 48px;
-  margin-bottom: var(--spacing-md);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
+  border: 1px solid rgba(79, 172, 254, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  color: var(--color-accent);
 }
 
 .featureTitle {
@@ -92,6 +101,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 12px rgba(79, 172, 254, 0.4));
 }
 
 .statLabel {
