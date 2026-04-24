@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
-  // Para una landing liviana, a veces querrás exportar como estático
-  // output: 'export', 
+  // Generates a static `out/` folder on `next build` — required for S3 deployment.
+  // Safe to enable: has no effect on `next dev`, only changes build output.
+  output: "export",
 };
 
 export default nextConfig;
