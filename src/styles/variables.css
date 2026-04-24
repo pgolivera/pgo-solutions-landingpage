@@ -1,91 +1,113 @@
+/* ============================================================
+   Design System — Spatial Dark
+   PGO Solutions
+   ============================================================ */
+
 :root {
-  /* Colors - Primary */
-  --color-primary: #1a1a2e;
-  --color-primary-light: #16213e;
-  --color-primary-dark: #0f3460;
+  /* — Backgrounds — */
+  --color-black:     #000000;
+  --color-surface-1: #080808;
+  --color-surface-2: #111111;
+  --color-surface-3: #181818;
 
-  /* Colors - Accent */
-  --color-accent: #4facfe;
-  --color-accent-secondary: #00f2fe;
+  /* — Borders — */
+  --color-border:        rgba(255, 255, 255, 0.07);
+  --color-border-mid:    rgba(255, 255, 255, 0.13);
+  --color-border-bright: rgba(255, 255, 255, 0.22);
 
-  /* Colors - Text */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: rgba(255, 255, 255, 0.7);
-  --color-text-muted: rgba(255, 255, 255, 0.5);
+  /* — Text — */
+  --color-text-primary:   #f5f5f7;
+  --color-text-secondary: rgba(245, 245, 247, 0.58);
+  --color-text-muted:     rgba(245, 245, 247, 0.34);
 
-  /* Colors - Background */
-  --color-bg-primary: #1a1a2e;
-  --color-bg-secondary: #16213e;
-  --color-bg-overlay: rgba(255, 255, 255, 0.1);
+  /* — Accent — */
+  --color-accent:       #0071e3;
+  --color-accent-hover: #0077ed;
+  --color-accent-glow:  rgba(0, 113, 227, 0.18);
+  --color-accent-rgb:   0, 113, 227;
 
-  /* Colors - Status */
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: #3b82f6;
+  /* — Legacy aliases — */
+  --color-primary:          #000000;
+  --color-primary-light:    #111111;
+  --color-primary-dark:     #000000;
+  --color-bg-primary:       #000000;
+  --color-bg-secondary:     #080808;
+  --color-bg-overlay:       rgba(255, 255, 255, 0.07);
+  --color-accent-secondary: #34aadc;
+  --color-success: #30d158;
+  --color-warning: #ffd60a;
+  --color-error:   #ff453a;
+  --color-info:    #0071e3;
 
-  /* Typography */
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-family-mono: "SF Mono", "Fira Code", "Fira Mono", Menlo, Monaco, monospace;
+  /* — Typography — */
+  --font-display:     'Syne', sans-serif;
+  --font-body:        'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-base: var(--font-body);
+  --font-family-mono: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
 
   /* Font Sizes */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
+  --font-size-xs:   0.6875rem;
+  --font-size-sm:   0.875rem;
   --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
-  --font-size-5xl: 3rem;
+  --font-size-lg:   1.125rem;
+  --font-size-xl:   1.25rem;
+  --font-size-2xl:  1.5rem;
+  --font-size-3xl:  1.875rem;
+  --font-size-4xl:  2.25rem;
+  --font-size-5xl:  3rem;
+  --font-size-6xl:  3.75rem;
+  --font-size-7xl:  4.5rem;
 
   /* Font Weights */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --font-weight-light:     300;
+  --font-weight-normal:    400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
 
   /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
+  --spacing-xs:  0.25rem;
+  --spacing-sm:  0.5rem;
+  --spacing-md:  1rem;
+  --spacing-lg:  1.5rem;
+  --spacing-xl:  2rem;
   --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
+  --spacing-3xl: 5rem;
 
   /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.25rem;
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.25rem;
+  --radius-2xl:  1.75rem;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.85);
+  --shadow-xl: 0 24px 72px rgba(0, 0, 0, 0.95);
 
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base:   300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Z-Index */
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-fixed: 300;
+  --z-dropdown:       100;
+  --z-sticky:         200;
+  --z-fixed:          300;
   --z-modal-backdrop: 400;
-  --z-modal: 500;
-  --z-popover: 600;
-  --z-tooltip: 700;
+  --z-modal:          500;
+  --z-popover:        600;
+  --z-tooltip:        700;
 
-  /* Breakpoints (for reference in JS) */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  /* Breakpoints */
+  --breakpoint-sm:  640px;
+  --breakpoint-md:  768px;
+  --breakpoint-lg:  1024px;
+  --breakpoint-xl:  1280px;
   --breakpoint-2xl: 1536px;
 }

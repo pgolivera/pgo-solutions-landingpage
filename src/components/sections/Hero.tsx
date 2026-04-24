@@ -7,13 +7,14 @@ export default function Hero() {
     <section className={styles.hero} id="hero">
       <div className={styles.container}>
         <div className={styles.content}>
+          <span className={styles.eyebrow}>PGO Solutions</span>
           <h1 className={styles.title}>
-            Soluciones digitales que
+            Herramientas que
             <span className={styles.highlight}> impulsan tu negocio</span>
           </h1>
           <p className={styles.subtitle}>
-            En PGO Solutions creamos herramientas tecnologicas que simplifican
-            tus procesos y potencian tus ventas. Descubre nuestros productos.
+            Creamos soluciones tecnologicas que simplifican tus procesos y
+            potencian tus ventas. Descubre nuestros productos.
           </p>
           <div className={styles.cta}>
             <a href="#contacto" className={styles.ctaButton}>

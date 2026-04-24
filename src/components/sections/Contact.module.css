@@ -1,27 +1,67 @@
 .contact {
+  position: relative;
   padding: var(--spacing-3xl) var(--spacing-lg);
+  background: var(--color-black);
+  overflow: hidden;
+}
+
+/* Subtle center glow */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 113, 227, 0.05) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* Top sweep from about */
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, var(--color-surface-1) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .container {
-  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
   margin: 0 auto;
 }
 
+/* — Header — */
 .header {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
 }
 
 .title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
   margin: 0 0 var(--spacing-lg) 0;
+  color: var(--color-text-primary);
 }
 
 .subtitle {
   font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-light);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -31,106 +71,126 @@
   gap: var(--spacing-2xl);
 }
 
+/* — Methods — */
 .methods {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm);
 }
 
 .method {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);
-  padding: var(--spacing-lg);
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-bg-overlay);
-  transition: transform var(--transition-base);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.026);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .method:hover {
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.044);
+  border-color: var(--color-border-mid);
 }
 
 .methodIcon {
-  font-size: 32px;
+  font-size: 20px;
   flex-shrink: 0;
+  opacity: 0.75;
 }
 
 .methodInfo {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 2px;
 }
 
 .methodLabel {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--color-text-muted);
 }
 
 .methodValue {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
-  color: var(--color-accent);
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
 }
 
 .methodValue:hover {
-  color: var(--color-accent-secondary);
+  color: var(--color-accent);
 }
 
 .methodValueText {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
 }
 
+/* — CTA block — */
 .cta {
   text-align: center;
-  padding: var(--spacing-xl);
-  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(79, 172, 254, 0.2);
+  padding: var(--spacing-2xl);
+  background: rgba(0, 113, 227, 0.05);
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(0, 113, 227, 0.13);
 }
 
 .ctaText {
-  margin: 0 0 var(--spacing-lg) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-light);
   color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-lg) 0;
 }
 
 .whatsappButton {
-  display: inline-block;
-  padding: var(--spacing-md) var(--spacing-xl);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.875rem 2rem;
   background: #25D366;
   color: #fff;
-  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
   border-radius: var(--radius-full);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-spring),
+    box-shadow var(--transition-base);
 }
 
 .whatsappButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  background: #20ba58;
+  transform: scale(1.03);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.28);
   color: #fff;
 }
 
-/* Tablet and up */
-@media (min-width: 768px) {
-  .contact {
-    padding: var(--spacing-3xl) var(--spacing-xl);
-  }
+.whatsappButton:active {
+  transform: scale(0.97);
+}
 
-  .title {
-    font-size: var(--font-size-4xl);
-  }
+/* — Tablet — */
+@media (min-width: 768px) {
+  .contact { padding: var(--spacing-3xl) var(--spacing-xl); }
 
   .methods {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: var(--spacing-md);
   }
 
   .method {
     flex: 1;
-    min-width: 200px;
-    max-width: 250px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
   }
 }

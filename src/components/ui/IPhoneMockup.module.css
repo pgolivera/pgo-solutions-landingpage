@@ -1,127 +1,407 @@
+/* ================================================================
+   IPhoneMockup — Apple-grade CSS rendering
+   Black Titanium finish · Dynamic Island camera · 3D hover tilt
+   ================================================================ */
+
+/* — Keyframes — */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  28%       { transform: translateY(-9px) rotate(0.4deg); }
+  58%       { transform: translateY(-5px) rotate(-0.25deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.45; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 0.72; transform: translateX(-50%) scale(1.1); }
+}
+
+/* Shimmer sweeps across the screen periodically */
+@keyframes screenShimmer {
+  0%   { transform: translateX(-220%) skewX(-20deg); opacity: 0; }
+  4%   { opacity: 1; }
+  20%  { transform: translateX(340%) skewX(-20deg); opacity: 0; }
+  100% { transform: translateX(340%) skewX(-20deg); opacity: 0; }
+}
+
+/* Dynamic Island idle "breathing" */
+@keyframes islandBreath {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 0 0 2px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.6); }
+  50%       { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 0 0 2px rgba(0,0,0,0.8), 0 4px 18px rgba(0,0,0,0.7), 0 0 14px rgba(0,113,227,0.08); }
+}
+
+
+/* — Container — */
 .mockupContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-lg);
 }
 
-.iphone {
-  position: relative;
-  width: 280px;
-  height: 570px;
-  background: linear-gradient(135deg, #2a2a3e 0%, #1a1a2e 100%);
-  border-radius: 45px;
-  padding: 12px;
-  box-shadow:
-    0 0 0 2px #3a3a4e,
-    0 0 0 4px #1a1a2e,
-    0 25px 50px -12px rgba(0, 0, 0, 0.5),
-    inset 0 0 1px 1px rgba(255, 255, 255, 0.1);
-}
-
-/* Dynamic Island */
-.dynamicIsland {
+/* Ambient light pool beneath the phone */
+.mockupContainer::before {
+  content: "";
   position: absolute;
-  top: 18px;
+  bottom: 0%;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 28px;
-  background: #000;
-  border-radius: 20px;
-  z-index: 10;
+  width: 85%;
+  height: 44%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 113, 227, 0.28) 0%,
+    rgba(0, 113, 227, 0.10) 42%,
+    rgba(0, 113, 227, 0.03) 65%,
+    transparent 80%
+  );
+  filter: blur(36px);
+  border-radius: 50%;
+  animation: glowPulse 5s ease-in-out infinite;
+  pointer-events: none;
 }
 
-/* Screen */
+
+/* — Scene: establishes 3D perspective — */
+.phoneScene {
+  perspective: 1400px;
+  perspective-origin: 50% 38%;
+}
+
+/* Float wrapper: handles vertical float separately from tilt */
+.floatWrapper {
+  animation: float 6.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+
+/* — Phone body — */
+.iphone {
+  position: relative;
+  width: 260px;
+  height: 540px;
+
+  /*
+   * Black Titanium frame simulation.
+   * Multi-stop gradient creates the anodized aluminum sheen:
+   * brighter at top-left corner (primary light source),
+   * deep matte black in the center, subtle lift on bottom-right.
+   */
+  background: linear-gradient(
+    156deg,
+    #52525a 0%,
+    #3c3c42 8%,
+    #2a2a30 20%,
+    #161618 42%,
+    #0e0e10 55%,
+    #1a1a1e 70%,
+    #282830 84%,
+    #363640 94%,
+    #44444e 100%
+  );
+
+  border-radius: 48px;
+  padding: 11px;
+
+  box-shadow:
+    /* Rim highlight — top edge catches overhead light */
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.32),
+    /* Inner chamfer ring */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    /* Dark inner bezel separating frame from screen */
+    inset 0 0 0 2.5px rgba(0, 0, 0, 0.92),
+    /* Outer edge hairline */
+    0 0 0 1px rgba(0, 0, 0, 0.58),
+    /* Primary depth — large diffuse shadow */
+    0 52px 120px -14px rgba(0, 0, 0, 1),
+    /* Mid-range shadow */
+    0 20px 52px rgba(0, 0, 0, 0.78),
+    /* Contact shadow */
+    0 5px 14px rgba(0, 0, 0, 0.55),
+    /* Apple blue ambient */
+    0 0 90px -22px rgba(0, 113, 227, 0.20);
+
+  /* Smooth 3D tilt on hover (separate from float) */
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.55s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Hover: tilt toward the viewer — the card tilts up-left */
+.phoneScene:hover .iphone {
+  transform: rotateY(-9deg) rotateX(5deg);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.42),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.20),
+    inset 0 0 0 2.5px rgba(0, 0, 0, 0.92),
+    0 0 0 1px rgba(0, 0, 0, 0.58),
+    0 70px 140px -12px rgba(0, 0, 0, 1),
+    0 32px 70px rgba(0, 0, 0, 0.82),
+    0 10px 24px rgba(0, 0, 0, 0.55),
+    /* Left-side glow when tilted away */
+    -24px 0 60px -18px rgba(0, 113, 227, 0.18),
+    0 0 110px -20px rgba(0, 113, 227, 0.30);
+}
+
+
+/* — Dynamic Island — */
+.dynamicIsland {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88px;
+  height: 26px;
+  background: #040404;
+  border-radius: 20px;
+  z-index: 10;
+
+  /* Camera sits on the right side of the island */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+
+  animation: islandBreath 6s ease-in-out 2s infinite;
+}
+
+
+/* — Camera lens — */
+.cameraLens {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+
+  /* Deep camera element with subtle blue-gray tint */
+  background: radial-gradient(
+    circle at 32% 32%,
+    #273040 0%,
+    #111d2a 38%,
+    #080e18 72%,
+    #030810 100%
+  );
+
+  box-shadow:
+    /* Outer ring (lens barrel) */
+    0 0 0 1.5px rgba(18, 28, 48, 0.95),
+    /* Slight metallic ring around barrel */
+    0 0 0 3px rgba(6, 12, 24, 0.75),
+    /* Depth shadow */
+    inset 0 1px 3px rgba(0, 0, 0, 0.95),
+    /* Subtle lens glow */
+    0 0 5px rgba(60, 120, 200, 0.10);
+}
+
+/* Specular glint on the lens */
+.cameraLens::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2.5px;
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.52);
+  filter: blur(0.5px);
+}
+
+/* Second smaller glint */
+.cameraLens::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(200, 220, 255, 0.22);
+}
+
+
+/* — Screen — */
 .screen {
   width: 100%;
   height: 100%;
   background: #000;
-  border-radius: 35px;
+  border-radius: 38px;
   overflow: hidden;
   position: relative;
+  z-index: 0;
 }
 
-/* Side buttons */
+/* Screen edge vignette — adds natural depth to OLED display */
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 44px rgba(0, 0, 0, 0.62);
+  pointer-events: none;
+  z-index: 5;
+}
+
+
+/* — Screen Glare — */
+/*
+ * Simulates the front glass panel reflection.
+ * A static diagonal gradient (top-left highlight) +
+ * a periodic shimmer sweep that travels across the screen.
+ */
+.screenGlare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+
+  /* Diagonal static glare — top-left to mid */
+  background: linear-gradient(
+    130deg,
+    rgba(255, 255, 255, 0.068) 0%,
+    rgba(255, 255, 255, 0.044) 16%,
+    rgba(255, 255, 255, 0.010) 38%,
+    transparent 55%
+  );
+}
+
+/* Shimmer sweep — runs every ~12s */
+.screenGlare::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.052) 50%,
+    transparent 100%
+  );
+  animation: screenShimmer 12s ease-in-out 2.2s infinite;
+}
+
+
+/* — Side Buttons — */
+/*
+ * All buttons share a titanium-grade gradient that matches the frame finish.
+ * Inset shadows simulate the button's pressed surface.
+ */
+.actionButton,
 .volumeUp,
 .volumeDown,
 .powerButton {
   position: absolute;
-  background: linear-gradient(180deg, #3a3a4e 0%, #2a2a3e 100%);
-  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    #5e5e66 0%,
+    #4c4c54 22%,
+    #3a3a42 58%,
+    #464650 88%,
+    #52525c 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.38),
+    inset 1px 0 0 rgba(255, 255, 255, 0.07),
+    0 2px 6px rgba(0, 0, 0, 0.60);
+}
+
+/* Action Button — top-left, iPhone 15/16 Pro */
+.actionButton {
+  left: -3px;
+  top: 84px;
+  width: 3px;
+  height: 22px;
+  border-radius: 2px 0 0 2px;
 }
 
 .volumeUp {
   left: -3px;
-  top: 120px;
+  top: 116px;
   width: 3px;
-  height: 35px;
+  height: 34px;
+  border-radius: 2px 0 0 2px;
 }
 
 .volumeDown {
   left: -3px;
-  top: 165px;
+  top: 160px;
   width: 3px;
-  height: 35px;
+  height: 34px;
+  border-radius: 2px 0 0 2px;
 }
 
 .powerButton {
   right: -3px;
-  top: 140px;
+  top: 128px;
   width: 3px;
-  height: 60px;
+  height: 58px;
+  border-radius: 0 2px 2px 0;
 }
 
-/* Responsive sizes */
+
+/* — Tablet (≥768px) — */
 @media (min-width: 768px) {
   .iphone {
-    width: 320px;
-    height: 650px;
-    border-radius: 50px;
+    width: 300px;
+    height: 620px;
+    border-radius: 54px;
+    padding: 13px;
+  }
+
+  .dynamicIsland {
+    top: 18px;
+    width: 96px;
+    height: 28px;
+    padding-right: 9px;
+  }
+
+  .cameraLens {
+    width: 12px;
+    height: 12px;
+  }
+
+  .screen { border-radius: 42px; }
+
+  .actionButton { top: 96px;  height: 25px; }
+  .volumeUp     { top: 132px; height: 38px; }
+  .volumeDown   { top: 180px; height: 38px; }
+  .powerButton  { top: 148px; height: 66px; }
+}
+
+
+/* — Desktop (≥1024px) — */
+@media (min-width: 1024px) {
+  .iphone {
+    width: 340px;
+    height: 700px;
+    border-radius: 60px;
     padding: 14px;
   }
 
   .dynamicIsland {
     top: 20px;
-    width: 100px;
+    width: 106px;
     height: 30px;
+    padding-right: 10px;
   }
 
-  .screen {
-    border-radius: 40px;
+  .cameraLens {
+    width: 13px;
+    height: 13px;
   }
 
-  .volumeUp {
-    top: 135px;
-    height: 40px;
-  }
+  .screen { border-radius: 48px; }
 
-  .volumeDown {
-    top: 185px;
-    height: 40px;
-  }
-
-  .powerButton {
-    top: 160px;
-    height: 70px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .iphone {
-    width: 360px;
-    height: 730px;
-    border-radius: 55px;
-    padding: 16px;
-  }
-
-  .dynamicIsland {
-    top: 22px;
-    width: 110px;
-    height: 32px;
-  }
-
-  .screen {
-    border-radius: 44px;
-  }
+  .actionButton { top: 108px; height: 28px; width: 3.5px; left: -3.5px; }
+  .volumeUp     { top: 148px; height: 42px; width: 3.5px; left: -3.5px; }
+  .volumeDown   { top: 200px; height: 42px; width: 3.5px; left: -3.5px; }
+  .powerButton  { top: 166px; height: 74px; width: 3.5px; right: -3.5px; }
 }
