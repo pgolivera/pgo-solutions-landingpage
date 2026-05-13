@@ -38,7 +38,7 @@
     "eslint": "^9.16.0",
     "eslint-config-next": "15.1.0",
     "husky": "^9.1.7",
-    "jscpd": "^4.0.0",
+    "jscpd": "^4.1.1",
     "jsdom": "^25.0.1",
     "lint-staged": "^16.0.0",
     "prettier": "^3.4.2",
