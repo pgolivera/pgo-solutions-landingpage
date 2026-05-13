@@ -1,0 +1,78 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # env:
+    #   CHANNEL_ID: "C123456789" # Replace with the actual Slack channel ID
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test
+
+      # TODO: Uncomment and configure the deployment target of your choice
+
+      # --- Option A: AWS S3 + CloudFront ---
+      # - name: Upload to S3
+      #   run: |
+      #     aws s3 sync out/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+      #   env:
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+
+      # - name: Invalidate CloudFront cache
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+      #       --paths "/*"
+      #   env:
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+
+      # --- Option B: Vercel ---
+      # - name: Deploy to Vercel
+      #   run: npx vercel --token=${{ secrets.VERCEL_TOKEN }} --prod
+
+      # --- Option C: Netlify ---
+      # - name: Deploy to Netlify
+      #   run: npx netlify-cli deploy --dir=out --prod
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # --- Slack notification (configure CHANNEL_ID in env above) ---
+      # - name: Send Slack notification
+      #   if: always()
+      #   uses: pgo-solutions/gha-slack-notifications@v1
+      #   with:
+      #     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
+      #     channel-id: ${{ env.CHANNEL_ID }}
+      #     status: ${{ job.status }}
+      #     message: "Deployment to Production - Landing Page"

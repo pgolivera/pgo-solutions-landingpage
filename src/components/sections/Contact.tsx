@@ -10,12 +10,12 @@ const CONTACT_METHODS = [
   {
     icon: "\u{1F4F1}",
     label: "WhatsApp",
-    value: "+54 9 11 1234-5678",
-    href: "https://wa.me/5491112345678",
+    value: "+54 9 11 5523-6820",
+    href: "https://wa.me/5491155236820",
   },
   {
     icon: "\u{1F4CD}",
-    label: "Ubicacion",
+    label: "Ubicación",
     value: "Buenos Aires, Argentina",
     href: null,
   },
@@ -28,8 +28,8 @@ export default function Contact() {
         <div className={styles.header}>
           <h2 className={styles.title}>Contactanos</h2>
           <p className={styles.subtitle}>
-            Estamos listos para ayudarte a llevar tu negocio al siguiente nivel.
-            Escribenos y te responderemos a la brevedad.
+            Estamos listos para ayudarte a llevar tu negocio al siguiente nivel. Escribenos y te responderemos a la
+            brevedad.
           </p>
         </div>
 
@@ -53,11 +53,9 @@ export default function Contact() {
           </div>
 
           <div className={styles.cta}>
-            <p className={styles.ctaText}>
-              Prefiere hablar directamente?
-            </p>
+            <p className={styles.ctaText}>¿Preferís hablar directamente?</p>
             <a
-              href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20conocer%20mas%20sobre%20sus%20productos"
+              href="https://wa.me/5491155236820?text=Hola!%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos"
               className={styles.whatsappButton}
               target="_blank"
               rel="noopener noreferrer"

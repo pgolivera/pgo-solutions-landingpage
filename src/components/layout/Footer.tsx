@@ -21,13 +21,11 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <span className={styles.logo}>PGO Solutions</span>
-            <p className={styles.brandText}>
-              Soluciones digitales que impulsan tu negocio hacia el futuro.
-            </p>
+            <p className={styles.brandText}>Soluciones digitales que impulsan tu negocio hacia el futuro.</p>
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Navegacion</h4>
+            <h4 className={styles.columnTitle}>Navegación</h4>
             <nav className={styles.columnLinks}>
               {FOOTER_LINKS.map((link) => (
                 <a key={link.href} href={link.href} className={styles.link}>
@@ -50,9 +48,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copyright}>
-            {currentYear} PGO Solutions. Todos los derechos reservados.
-          </p>
+          <p className={styles.copyright}>© {currentYear} PGO Solutions. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

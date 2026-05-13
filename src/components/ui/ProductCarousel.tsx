@@ -8,7 +8,7 @@ const PRODUCTS: Product[] = [
   {
     id: "facturapp",
     name: "FacturApp",
-    description: "App de facturacion simple y rapida para tu negocio",
+    description: "App de facturación simple y rápida para tu negocio",
     icon: "\u{1F4CB}",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   },

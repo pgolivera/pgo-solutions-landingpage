@@ -13,15 +13,15 @@ export default function Hero() {
             <span className={styles.highlight}> impulsan tu negocio</span>
           </h1>
           <p className={styles.subtitle}>
-            Creamos soluciones tecnologicas que simplifican tus procesos y
-            potencian tus ventas. Descubre nuestros productos.
+            Creamos soluciones tecnológicas que simplifican tus procesos y potencian tus ventas. Descubrí nuestros
+            productos.
           </p>
           <div className={styles.cta}>
             <a href="#contacto" className={styles.ctaButton}>
-              Contactanos
+              Contáctanos
             </a>
             <a href="#nosotros" className={styles.ctaSecondary}>
-              Conoce mas
+              Conocé más
             </a>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function Hero() {
           <IPhoneMockup>
             <ProductCarousel />
           </IPhoneMockup>
-          <p className={styles.swipeHint}>Desliza para ver productos</p>
+          <p className={styles.swipeHint}>Deslizá para ver productos</p>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 {
-  "name": "pgo-next-template",
+  "name": "pgo-solutions-landingpage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "test:ui": "vitest --ui",
     "dupes": "jscpd src",
-    "ci": "yarn typecheck && yarn lint && yarn test && yarn dupes"
+    "ci": "yarn typecheck && yarn lint && yarn test && yarn dupes",
+    "prepare": "husky"
   },
   "packageManager": "yarn@1.22.22",
   "dependencies": {
@@ -24,6 +25,7 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@playwright/test": "^1.49.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.3",
@@ -35,9 +37,21 @@
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.16.0",
     "eslint-config-next": "15.1.0",
+    "husky": "^9.1.7",
     "jscpd": "^4.0.0",
     "jsdom": "^25.0.1",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   }
 }

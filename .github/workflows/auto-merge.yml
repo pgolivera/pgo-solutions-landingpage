@@ -1,0 +1,22 @@
+name: Auto-merge
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Auto-merge PR
+        uses: pgo-solutions/gha-auto-merge@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
