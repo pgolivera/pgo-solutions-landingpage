@@ -10,7 +10,7 @@ export default function Contact() {
             ¿Arrancamos con <em className={styles.titleEm}>tu proyecto</em>?
           </h2>
           <p className={styles.subtitle}>
-            Contame qué necesitás y te respondo en menos de 24 horas. Sin formularios, sin vueltas.
+            Contame qué necesitás y en breve nos comunicamos. Sin formularios, sin vueltas.
           </p>
         </div>
 
