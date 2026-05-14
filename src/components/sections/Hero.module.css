@@ -52,11 +52,10 @@
 /* — Section — */
 .hero {
   position: relative;
-  min-height: 100svh;
   display: flex;
   align-items: center;
   background: var(--color-bg);
-  padding: 96px var(--spacing-lg) var(--spacing-3xl);
+  padding: 96px var(--spacing-lg) var(--spacing-xl);
   overflow: hidden;
 }
 
@@ -196,11 +195,9 @@
   transform: translateX(5px);
 }
 
-/* — Visual — Mobile: 3-column grid — */
+/* — Visual — Hidden on mobile, floating cards on desktop — */
 .visual {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-md);
+  display: none;
   animation: fadeIn 0.8s 0.42s both;
 }
 
@@ -260,7 +257,8 @@
 /* — Desktop — */
 @media (min-width: 1024px) {
   .hero {
-    padding: 80px var(--spacing-xl) var(--spacing-3xl);
+    min-height: 100svh;
+    padding: 80px var(--spacing-xl) var(--spacing-2xl);
   }
 
   .container {
