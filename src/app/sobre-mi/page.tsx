@@ -7,39 +7,46 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Sobre mí | PGO Solutions",
-  description: "Conocé a Pablo Olivera, el desarrollador y creador de productos digitales detrás de PGO Solutions.",
+  description:
+    "Conocé a Pablo Olivera: Software Engineer, más de una década en finanzas B2B y el fundador detrás de PGO Solutions.",
 };
 
 const SKILLS = [
-  { label: "Frontend", items: ["Next.js", "React", "TypeScript", "CSS / Tailwind"] },
-  { label: "Backend", items: ["Node.js", "Express", "REST APIs", "PostgreSQL"] },
-  { label: "Diseño & Producto", items: ["UI/UX Design", "Figma", "SEO", "Analytics"] },
+  { label: "Frontend & Mobile", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"] },
+  { label: "Backend & Cloud", items: ["Ruby on Rails", "AWS (S3, CloudFront)", "CI/CD", "GitHub Actions"] },
+  { label: "Testing & Calidad", items: ["Vitest", "Jest", "Testing Library", "Cypress"] },
 ];
 
 const TRAJECTORY = [
   {
-    year: "Comienzos",
-    title: "Los primeros pasos",
+    year: "2010",
+    title: "El mundo corporativo",
     description:
-      "Empecé a aprender programación web de forma autodidacta, explorando el mundo del frontend y descubriendo el impacto que una buena interfaz puede tener en las personas.",
+      "Egresado técnico electrónico, con curiosidad innata por la tecnología pero los caminos me llevaron al mundo financiero. Empecé como analista de cobranzas en Medife, desarrollando una visión profunda del negocio B2B que hoy es mi mayor diferenciador.",
   },
   {
-    year: "Freelance",
-    title: "Primeros proyectos reales",
+    year: "2017",
+    title: "Primer puente tecnológico",
     description:
-      "Di mis primeros pasos trabajando con emprendedores y pequeñas empresas de Buenos Aires. Cada proyecto fue una escuela: aprendí a escuchar al cliente, entender su negocio y traducirlo en código.",
+      "En Lincoln Electric fui el nexo entre el área de finanzas y los consultores de SAP durante la migración de Tango a SAP. Por primera vez, mi costado técnico encontró un lugar real en el mundo corporativo. Lo repetí años después en Agrofina.",
   },
   {
-    year: "PGO Solutions",
-    title: "Formalizar la visión",
+    year: "2022",
+    title: "El giro definitivo",
     description:
-      "Con varios proyectos exitosos, decidí estructurar todo bajo PGO Solutions. La idea es simple: que cualquier negocio pueda acceder a herramientas digitales de calidad, sin importar su tamaño.",
+      "La curiosidad técnica que llevaba años dormida volvió con fuerza. Empecé a aprender desarrollo web de forma autodidacta: React, TypeScript, Next.js. Aprendiendo mientras hacía, como siempre. Hoy formalizo ese camino con una Diplomatura en Desarrollo Full Stack.",
+  },
+  {
+    year: "2024",
+    title: "Software Engineer de tiempo completo",
+    description:
+      "Di el salto definitivo a la industria tech como Frontend Engineer en Insight Delta. Arquitectura de productos, CI/CD en AWS, liderazgo de testing con Vitest, integración con Ruby on Rails. Del mundo financiero al tech, sin perder de vista el negocio.",
   },
   {
     year: "Hoy",
-    title: "Construyendo el ecosistema",
+    title: "PGO Solutions",
     description:
-      "Desarrollo Landing Factory, FacturApp y BotSeller en paralelo. El objetivo es construir productos que resuelvan problemas reales y escalen con quienes los usan.",
+      "Nació como un proyecto paralelo que une lo mejor de los dos mundos: el conocimiento B2B de más de una década en el sector corporativo y las habilidades técnicas que fui construyendo. Ofrezco desarrollo a medida para empresas que saben lo que necesitan porque yo estuve del otro lado del mostrador.",
   },
 ];
 
@@ -105,13 +112,14 @@ export default function SobreMi() {
                 </h1>
                 <div className={styles.introBio}>
                   <p>
-                    Soy desarrollador y creador de productos digitales radicado en Buenos Aires, Argentina. Me
-                    especializo en construir soluciones web que combinan diseño cuidado con tecnología sólida.
+                    Software Engineer con más de 3 años en el mundo tech y más de una década antes en el sector
+                    corporativo. Trabajo en Insight Delta construyendo productos de principio a fin: arquitectura
+                    frontend, infraestructura en AWS y automatización de CI/CD.
                   </p>
                   <p>
-                    Fundé PGO Solutions con la convicción de que las herramientas digitales de calidad deben estar al
-                    alcance de cualquier negocio, sin importar su tamaño. Cada proyecto es una oportunidad de entender
-                    el problema y diseñar la solución correcta.
+                    Vengo del mundo de las finanzas B2B — cobranzas, crédito, migraciones SAP — y ese recorrido me da
+                    algo que pocos developers tienen: entiendo el negocio desde adentro. PGO Solutions nació de esa
+                    combinación: desarrollo de software con visión de negocio real.
                   </p>
                 </div>
               </div>

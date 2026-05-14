@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./About.module.css";
 
-const SKILLS = ["Next.js", "React", "TypeScript", "Node.js", "Diseño UI/UX", "SEO"];
+const SKILLS = ["React / Next.js", "TypeScript", "React Native", "AWS & CI/CD", "Ruby on Rails", "B2B & Negocio"];
 
 export default function About() {
   return (
@@ -56,13 +56,13 @@ export default function About() {
           </h2>
           <div className={styles.bio}>
             <p>
-              Soy desarrollador y creador de productos digitales radicado en Buenos Aires, Argentina. Me especializo en
-              construir soluciones web que combinan diseño cuidado con tecnología sólida.
+              Software Engineer radicado en Buenos Aires. Vengo del mundo financiero B2B — más de una década en
+              cobranzas corporativas, migraciones SAP y gestión de cuentas — y desde 2024 trabajo full-time como
+              Frontend Engineer en Insight Delta.
             </p>
             <p>
-              Fundé PGO Solutions con la convicción de que las herramientas digitales de calidad deben estar al alcance
-              de cualquier negocio, sin importar su tamaño. Cada proyecto es una oportunidad de entender el problema y
-              diseñar la solución correcta.
+              Esa combinación es lo que hace diferente a PGO Solutions: entiendo el negocio desde adentro. No solo
+              construyo lo que me pedís, entiendo por qué lo necesitás.
             </p>
           </div>
           <div className={styles.skills}>
