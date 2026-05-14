@@ -22,7 +22,7 @@ const PRODUCTS = [
     status: "dev" as const,
     statusLabel: "En desarrollo",
     color: "amber" as const,
-    href: null,
+    href: "/productos/facturapp",
   },
   {
     icon: "🤖",
@@ -33,7 +33,7 @@ const PRODUCTS = [
     status: "soon" as const,
     statusLabel: "Próximamente",
     color: "dark" as const,
-    href: null,
+    href: "/productos/botseller",
   },
 ];
 

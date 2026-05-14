@@ -10,8 +10,8 @@ const NAV_LINKS = [
 
 const PRODUCTS = [
   { name: "Landing Factory", href: "/productos/landing-factory" },
-  { name: "FacturApp", href: "/#productos" },
-  { name: "BotSeller", href: "/#productos" },
+  { name: "FacturApp", href: "/productos/facturapp" },
+  { name: "BotSeller", href: "/productos/botseller" },
 ];
 
 export default function Footer() {
