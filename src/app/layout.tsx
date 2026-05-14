@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { SEO_CONFIG, SITE_CONFIG } from "@/constants";
+import WhatsAppFAB from "@/components/ui/WhatsAppFAB";
 import "@/styles/index.css";
 
 export const viewport: Viewport = {
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <main id="root">{children}</main>
+        <WhatsAppFAB />
       </body>
     </html>
   );
