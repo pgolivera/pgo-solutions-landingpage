@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -11,10 +12,13 @@ export const metadata: Metadata = {
 };
 
 const CLIENTS = [
-  { icon: "👗", type: "Indumentaria & moda", project: "Landing de temporada" },
-  { icon: "🏠", type: "Inmobiliaria boutique", project: "Sitio de captación" },
-  { icon: "🎯", type: "Coaching empresarial", project: "Landing de servicios" },
-  { icon: "🍽️", type: "Gastronomía & delivery", project: "Menú digital" },
+  {
+    name: "Fletes Ferro",
+    sector: "Transporte & Logística",
+    description: "Fletes, mudanzas y transporte de cargas en Luján y todo el país.",
+    image: "/images/cliente-fletes-ferro.png",
+    href: "https://fletes-ferro.netlify.app/",
+  },
 ];
 
 const FEATURES = [
@@ -89,17 +93,33 @@ export default function LandingFactory() {
               </p>
             </header>
 
-            <div className={styles.clientsGrid}>
-              {CLIENTS.map((client, i) => (
-                <div key={i} className={styles.clientCard}>
-                  <span className={styles.clientIcon} aria-hidden="true">
-                    {client.icon}
-                  </span>
-                  <div className={styles.clientInfo}>
-                    <p className={styles.clientType}>{client.type}</p>
-                    <p className={styles.clientProject}>{client.project}</p>
+            <div className={styles.projectsGrid}>
+              {CLIENTS.map((client) => (
+                <a
+                  key={client.name}
+                  href={client.href}
+                  className={styles.projectCard}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className={styles.projectImageWrapper}>
+                    <Image
+                      src={client.image}
+                      alt={`Sitio web de ${client.name}`}
+                      fill
+                      className={styles.projectImage}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                    />
                   </div>
-                </div>
+                  <div className={styles.projectInfo}>
+                    <div>
+                      <span className={styles.projectSector}>{client.sector}</span>
+                      <h3 className={styles.projectName}>{client.name}</h3>
+                      <p className={styles.projectDesc}>{client.description}</p>
+                    </div>
+                    <span className={styles.projectLink}>Ver sitio →</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
