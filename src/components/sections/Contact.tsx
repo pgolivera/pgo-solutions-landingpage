@@ -74,7 +74,7 @@ export default function Contact() {
           <div className={styles.divider} />
 
           <p className={styles.note}>
-            Respondemos en menos de 24 h. Para proyectos urgentes, escribinos directo por WhatsApp.
+            Leemos cada consulta con atención y te respondemos con soluciones concretas para tu proyecto.
           </p>
         </div>
       </div>

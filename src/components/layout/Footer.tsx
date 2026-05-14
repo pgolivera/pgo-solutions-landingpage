@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/#productos", label: "Productos" },
-  { href: "/sobre-mi", label: "Nosotros" },
+  { href: "/sobre-mi", label: "Sobre mí" },
   { href: "/#contacto", label: "Contacto" },
 ];
 
@@ -27,9 +27,7 @@ export default function Footer() {
               <span className={styles.logoDot}>·</span>
               <span className={styles.logoWord}>Solutions</span>
             </span>
-            <p className={styles.brandText}>
-              Soluciones digitales que impulsan negocios reales. Buenos Aires, Argentina.
-            </p>
+            <p className={styles.brandText}>Soluciones digitales que impulsan negocios reales.</p>
           </div>
 
           <div className={styles.column}>
