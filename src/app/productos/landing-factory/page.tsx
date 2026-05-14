@@ -50,9 +50,7 @@ export default function LandingFactory() {
             <Link href="/#productos" className={styles.backLink}>
               ← Volver a productos
             </Link>
-            <div className={styles.heroBadge}>
-              <span aria-hidden="true">⚡</span> Landing Factory
-            </div>
+            <div className={styles.heroBadge}>Landing Factory</div>
             <h1 className={styles.heroTitle}>
               Landing pages que <em className={styles.heroTitleEm}>convierten de verdad</em>
             </h1>

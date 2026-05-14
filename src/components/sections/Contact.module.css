@@ -1,5 +1,5 @@
 .contact {
-  background: var(--color-brand);
+  background: linear-gradient(135deg, #9a5520 0%, #6b3510 100%);
   padding: var(--spacing-3xl) var(--spacing-lg);
 }
 
@@ -24,7 +24,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: rgba(255, 200, 140, 0.85);
 }
 
 .title {
@@ -51,8 +51,8 @@
 
 /* — Card — */
 .card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: var(--radius-2xl);
   padding: var(--spacing-xl);
   display: flex;
