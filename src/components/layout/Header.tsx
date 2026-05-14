@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "./Header.module.css";
 
 const NAV_LINKS = [
-  { href: "#productos", label: "Productos" },
-  { href: "#pablo", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#productos", label: "Productos" },
+  { href: "/sobre-mi", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Header() {
@@ -24,11 +25,11 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
-        <a href="#hero" className={styles.logo} onClick={closeMenu}>
+        <Link href="/" className={styles.logo} onClick={closeMenu}>
           <span className={styles.logoMark}>PGO</span>
           <span className={styles.logoDot}>·</span>
           <span className={styles.logoWord}>Solutions</span>
-        </a>
+        </Link>
 
         <button
           className={styles.menuButton}
@@ -45,13 +46,13 @@ export default function Header() {
           aria-label="Navegación principal"
         >
           {NAV_LINKS.map((link) => (
-            <a key={link.label} href={link.href} className={styles.navLink} onClick={closeMenu}>
+            <Link key={link.label} href={link.href} className={styles.navLink} onClick={closeMenu}>
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contacto" className={styles.ctaButton} onClick={closeMenu}>
+          <Link href="/#contacto" className={styles.ctaButton} onClick={closeMenu}>
             Empezar proyecto
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

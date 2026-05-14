@@ -1,16 +1,17 @@
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const NAV_LINKS = [
-  { href: "#hero", label: "Inicio" },
-  { href: "#productos", label: "Productos" },
-  { href: "#pablo", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/", label: "Inicio" },
+  { href: "/#productos", label: "Productos" },
+  { href: "/sobre-mi", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 const PRODUCTS = [
-  { name: "Landing Factory", href: "#productos" },
-  { name: "FacturApp", href: "#productos" },
-  { name: "BotSeller", href: "#productos" },
+  { name: "Landing Factory", href: "/productos/landing-factory" },
+  { name: "FacturApp", href: "/#productos" },
+  { name: "BotSeller", href: "/#productos" },
 ];
 
 export default function Footer() {
@@ -35,9 +36,9 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Navegación</h4>
             <nav className={styles.columnLinks} aria-label="Footer navigation">
               {NAV_LINKS.map((link) => (
-                <a key={link.label} href={link.href} className={styles.link}>
+                <Link key={link.label} href={link.href} className={styles.link}>
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -46,9 +47,9 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Productos</h4>
             <nav className={styles.columnLinks} aria-label="Products navigation">
               {PRODUCTS.map((product) => (
-                <a key={product.name} href={product.href} className={styles.link}>
+                <Link key={product.name} href={product.href} className={styles.link}>
                   {product.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

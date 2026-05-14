@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Products.module.css";
 
 const PRODUCTS = [
@@ -10,6 +11,7 @@ const PRODUCTS = [
     status: "active" as const,
     statusLabel: "Activo",
     color: "green" as const,
+    href: "/productos/landing-factory",
   },
   {
     icon: "📋",
@@ -20,6 +22,7 @@ const PRODUCTS = [
     status: "dev" as const,
     statusLabel: "En desarrollo",
     color: "amber" as const,
+    href: null,
   },
   {
     icon: "🤖",
@@ -30,14 +33,8 @@ const PRODUCTS = [
     status: "soon" as const,
     statusLabel: "Próximamente",
     color: "dark" as const,
+    href: null,
   },
-];
-
-const CLIENTS = [
-  { icon: "👗", type: "Indumentaria & moda", project: "Landing de temporada" },
-  { icon: "🏠", type: "Inmobiliaria boutique", project: "Sitio de captación" },
-  { icon: "🎯", type: "Coaching empresarial", project: "Landing de servicios" },
-  { icon: "🍽️", type: "Gastronomía & delivery", project: "Menú digital" },
 ];
 
 const colorClass: Record<string, string> = {
@@ -52,6 +49,27 @@ const statusClass: Record<string, string> = {
   soon: styles.badgeSoon,
 };
 
+function CardContent({ product }: { product: (typeof PRODUCTS)[number] }) {
+  return (
+    <>
+      <div className={styles.cardHeader}>
+        <span className={styles.cardIcon} aria-hidden="true">
+          {product.icon}
+        </span>
+        <span className={`${styles.badge} ${statusClass[product.status]}`}>{product.statusLabel}</span>
+      </div>
+      <h3 className={styles.cardName}>{product.name}</h3>
+      <p className={styles.cardTagline}>{product.tagline}</p>
+      <p className={styles.cardDesc}>{product.description}</p>
+      {product.href && (
+        <span className={styles.cardCta} aria-hidden="true">
+          Ver proyectos →
+        </span>
+      )}
+    </>
+  );
+}
+
 export default function Products() {
   return (
     <section className={styles.products} id="productos">
@@ -65,46 +83,21 @@ export default function Products() {
         </header>
 
         <div className={styles.grid}>
-          {PRODUCTS.map((product) => (
-            <article key={product.name} className={`${styles.card} ${colorClass[product.color]}`}>
-              <div className={styles.cardHeader}>
-                <span className={styles.cardIcon} aria-hidden="true">
-                  {product.icon}
-                </span>
-                <span className={`${styles.badge} ${statusClass[product.status]}`}>{product.statusLabel}</span>
-              </div>
-              <h3 className={styles.cardName}>{product.name}</h3>
-              <p className={styles.cardTagline}>{product.tagline}</p>
-              <p className={styles.cardDesc}>{product.description}</p>
-            </article>
-          ))}
-        </div>
-
-        {/* Landing Factory showcase */}
-        <div className={styles.showcase}>
-          <div className={styles.showcaseHeader}>
-            <span className={styles.showcaseIcon} aria-hidden="true">
-              ⚡
-            </span>
-            <div>
-              <h3 className={styles.showcaseTitle}>Empresas que confiaron en PGO Solutions</h3>
-              <p className={styles.showcaseSubtitle}>Proyectos realizados a través de Landing Factory</p>
-            </div>
-          </div>
-
-          <div className={styles.clientsGrid}>
-            {CLIENTS.map((client, i) => (
-              <div key={i} className={styles.clientCard}>
-                <span className={styles.clientIcon} aria-hidden="true">
-                  {client.icon}
-                </span>
-                <div className={styles.clientInfo}>
-                  <p className={styles.clientType}>{client.type}</p>
-                  <p className={styles.clientProject}>{client.project}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {PRODUCTS.map((product) =>
+            product.href ? (
+              <Link
+                key={product.name}
+                href={product.href}
+                className={`${styles.card} ${styles.cardLink} ${colorClass[product.color]}`}
+              >
+                <CardContent product={product} />
+              </Link>
+            ) : (
+              <article key={product.name} className={`${styles.card} ${colorClass[product.color]}`}>
+                <CardContent product={product} />
+              </article>
+            )
+          )}
         </div>
       </div>
     </section>
