@@ -4,34 +4,62 @@
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.scrolled {
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.06);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
-  height: 52px;
+  height: 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
+/* — Logo — */
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.125rem;
+  text-decoration: none;
   transition: opacity var(--transition-fast);
 }
 
 .logo:hover {
-  opacity: 0.7;
-  color: var(--color-text-primary);
+  opacity: 0.72;
+}
+
+.logoMark {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-brand);
+}
+
+.logoDot {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 1px;
+}
+
+.logoWord {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: -0.01em;
 }
 
 /* — Mobile menu button — */
@@ -39,18 +67,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   background: transparent;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .menuIcon {
   position: relative;
   width: 22px;
   height: 1.5px;
-  background: var(--color-text-primary);
+  background: var(--color-text);
   transition: all var(--transition-base);
 }
 
@@ -61,7 +90,7 @@
   left: 0;
   width: 22px;
   height: 1.5px;
-  background: var(--color-text-primary);
+  background: var(--color-text);
   transition: all var(--transition-base);
 }
 
@@ -84,26 +113,25 @@
   transform: rotate(-45deg);
 }
 
-/* — Navigation — */
+/* — Mobile nav — */
 .nav {
   position: absolute;
-  top: 100%;
+  top: 64px;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-xl);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   opacity: 0;
   pointer-events: none;
   transition:
     transform var(--transition-base),
     opacity var(--transition-base);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .navOpen {
@@ -117,31 +145,35 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
-  letter-spacing: 0.01em;
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .navLink:hover {
-  color: var(--color-text-primary);
+  color: var(--color-brand);
 }
 
 .ctaButton {
-  display: inline-block;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
-  color: var(--color-primary) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+  padding: 0.625rem 1.375rem;
+  background: var(--color-brand);
+  color: #fff;
   font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
   border-radius: var(--radius-full);
+  text-decoration: none;
   transition:
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
-  white-space: nowrap;
+    background var(--transition-fast),
+    transform var(--transition-spring);
 }
 
 .ctaButton:hover {
+  background: var(--color-brand-mid);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(79, 172, 254, 0.4);
-  color: var(--color-primary) !important;
+  color: #fff;
 }
 
 /* — Desktop — */
@@ -153,20 +185,23 @@
   .nav {
     position: static;
     background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
     border: none;
     padding: 0;
     flex-direction: row;
+    align-items: center;
     gap: var(--spacing-xl);
     transform: none;
     opacity: 1;
     pointer-events: auto;
+    box-shadow: none;
   }
 
   .navLink {
-    padding: var(--spacing-xs) 0;
+    padding: 0;
     font-size: var(--font-size-sm);
-    letter-spacing: 0.015em;
+  }
+
+  .ctaButton {
+    margin-top: 0;
   }
 }

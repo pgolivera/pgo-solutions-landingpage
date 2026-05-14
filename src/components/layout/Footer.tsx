@@ -1,15 +1,16 @@
 import styles from "./Footer.module.css";
 
-const FOOTER_LINKS = [
+const NAV_LINKS = [
   { href: "#hero", label: "Inicio" },
-  { href: "#nosotros", label: "Nosotros" },
+  { href: "#productos", label: "Productos" },
+  { href: "#pablo", label: "Nosotros" },
   { href: "#contacto", label: "Contacto" },
 ];
 
 const PRODUCTS = [
-  { name: "FacturApp", href: "#hero" },
-  { name: "Landing Factory", href: "#hero" },
-  { name: "BotSellers", href: "#hero" },
+  { name: "Landing Factory", href: "#productos" },
+  { name: "FacturApp", href: "#productos" },
+  { name: "BotSeller", href: "#productos" },
 ];
 
 export default function Footer() {
@@ -20,15 +21,21 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <span className={styles.logo}>PGO Solutions</span>
-            <p className={styles.brandText}>Soluciones digitales que impulsan tu negocio hacia el futuro.</p>
+            <span className={styles.logo}>
+              <span className={styles.logoMark}>PGO</span>
+              <span className={styles.logoDot}>·</span>
+              <span className={styles.logoWord}>Solutions</span>
+            </span>
+            <p className={styles.brandText}>
+              Soluciones digitales que impulsan negocios reales. Buenos Aires, Argentina.
+            </p>
           </div>
 
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>Navegación</h4>
-            <nav className={styles.columnLinks}>
-              {FOOTER_LINKS.map((link) => (
-                <a key={link.href} href={link.href} className={styles.link}>
+            <nav className={styles.columnLinks} aria-label="Footer navigation">
+              {NAV_LINKS.map((link) => (
+                <a key={link.label} href={link.href} className={styles.link}>
                   {link.label}
                 </a>
               ))}
@@ -37,7 +44,7 @@ export default function Footer() {
 
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>Productos</h4>
-            <nav className={styles.columnLinks}>
+            <nav className={styles.columnLinks} aria-label="Products navigation">
               {PRODUCTS.map((product) => (
                 <a key={product.name} href={product.href} className={styles.link}>
                   {product.name}
@@ -49,6 +56,9 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>© {currentYear} PGO Solutions. Todos los derechos reservados.</p>
+          <a href="mailto:contacto@pgosolutions.com" className={styles.contactLink}>
+            contacto@pgosolutions.com
+          </a>
         </div>
       </div>
     </footer>

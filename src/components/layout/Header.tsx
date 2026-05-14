@@ -1,47 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 
 const NAV_LINKS = [
-  { href: "#hero", label: "Inicio" },
-  { href: "#hero", label: "Productos" },
-  { href: "#nosotros", label: "Nosotros" },
+  { href: "#productos", label: "Productos" },
+  { href: "#pablo", label: "Nosotros" },
   { href: "#contacto", label: "Contacto" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
-        <a href="#hero" className={styles.logo}>
-          PGO Solutions
+        <a href="#hero" className={styles.logo} onClick={closeMenu}>
+          <span className={styles.logoMark}>PGO</span>
+          <span className={styles.logoDot}>·</span>
+          <span className={styles.logoWord}>Solutions</span>
         </a>
 
-        {/* Mobile menu button */}
         <button
           className={styles.menuButton}
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isMenuOpen}
         >
           <span className={`${styles.menuIcon} ${isMenuOpen ? styles.menuIconOpen : ""}`} />
         </button>
 
-        {/* Navigation */}
-        <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
+        <nav
+          className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}
+          role="navigation"
+          aria-label="Navegación principal"
+        >
           {NAV_LINKS.map((link) => (
             <a key={link.label} href={link.href} className={styles.navLink} onClick={closeMenu}>
               {link.label}
             </a>
           ))}
           <a href="#contacto" className={styles.ctaButton} onClick={closeMenu}>
-            Contáctanos
+            Empezar proyecto
           </a>
         </nav>
       </div>

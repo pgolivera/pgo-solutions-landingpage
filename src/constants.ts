@@ -5,10 +5,11 @@
 export const SITE_CONFIG = {
   name: "PGO Solutions",
   shortName: "PGO Solutions",
-  description: "Soluciones digitales que impulsan tu negocio. FacturApp, Landing Factory y BotSellers para automatizar y potenciar tus ventas.",
+  description:
+    "Soluciones digitales que impulsan tu negocio. FacturApp, Landing Factory y BotSellers para automatizar y potenciar tus ventas.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://pgosolutions.com",
   locale: "es_AR",
-  themeColor: "#1a1a2e",
+  themeColor: "#0D4A35",
 };
 
 // =============================================================================
@@ -20,7 +21,15 @@ export const SEO_CONFIG = {
   defaultTitle: SITE_CONFIG.name,
   titleTemplate: `%s | ${SITE_CONFIG.name}`,
   defaultDescription: SITE_CONFIG.description,
-  defaultKeywords: ["facturacion", "landing pages", "whatsapp bot", "automatizacion", "ventas", "argentina", "PGO Solutions"],
+  defaultKeywords: [
+    "facturacion",
+    "landing pages",
+    "whatsapp bot",
+    "automatizacion",
+    "ventas",
+    "argentina",
+    "PGO Solutions",
+  ],
   defaultImage: "/images/og-image.png",
   baseUrl: SITE_CONFIG.url,
   twitterHandle: "@pgosolutions",
