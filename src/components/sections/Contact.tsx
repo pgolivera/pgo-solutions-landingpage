@@ -92,10 +92,10 @@ export default async function Contact() {
 
         <div className={styles.card}>
           <ContactRow
-            href="mailto:contacto@pgosolutions.com"
+            href="mailto:contacto@pgo-solutions.com.ar"
             icon={EmailIcon}
             label={t("emailLabel")}
-            value="contacto@pgosolutions.com"
+            value="contacto@pgo-solutions.com.ar"
           />
           <ContactRow
             href="https://wa.me/5491155236820"

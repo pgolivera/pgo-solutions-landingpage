@@ -58,8 +58,8 @@ export default async function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>{t("copyright", { year: currentYear })}</p>
-          <a href="mailto:contacto@pgosolutions.com" className={styles.contactLink}>
-            contacto@pgosolutions.com
+          <a href="mailto:contacto@pgo-solutions.com.ar" className={styles.contactLink}>
+            contacto@pgo-solutions.com.ar
           </a>
         </div>
       </div>
