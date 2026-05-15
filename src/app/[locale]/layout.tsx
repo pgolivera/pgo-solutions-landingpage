@@ -1,4 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import { SEO_CONFIG, SITE_CONFIG } from "@/constants";
 import WhatsAppFAB from "@/components/ui/WhatsAppFAB";
 import "@/styles/index.css";
@@ -47,16 +51,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="es">
+    <html lang={locale}>
       <body>
-        <main id="root">{children}</main>
-        <WhatsAppFAB />
+        <NextIntlClientProvider messages={messages}>
+          <main id="root">{children}</main>
+          <WhatsAppFAB />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

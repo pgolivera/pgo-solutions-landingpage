@@ -1,10 +1,10 @@
+import createNextIntlPlugin from "next-intl/plugin";
 import type { NextConfig } from "next";
 
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
-  // Para una landing liviana, a veces querrás exportar como estático
-  // output: 'export', 
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

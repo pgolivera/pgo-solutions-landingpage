@@ -1,28 +1,31 @@
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+export default async function Hero() {
+  const t = await getTranslations("hero");
+
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>Agencia Digital · Buenos Aires, Argentina</span>
+          <span className={styles.eyebrow}>{t("eyebrow")}</span>
           <h1 className={styles.title}>
-            Hacemos que tu presencia digital <em className={styles.titleEm}>trabaje para vos</em>
+            {t.rich("title", {
+              em: (chunks) => <em className={styles.titleEm}>{chunks}</em>,
+            })}
           </h1>
-          <p className={styles.subtitle}>
-            Diseñamos y desarrollamos landing pages, aplicaciones web y herramientas digitales que convierten visitantes
-            en clientes reales.
-          </p>
+          <p className={styles.subtitle}>{t("subtitle")}</p>
           <div className={styles.cta}>
-            <a href="#contacto" className={styles.ctaPrimary}>
-              Iniciar un proyecto
-            </a>
-            <a href="#productos" className={styles.ctaSecondary}>
-              Ver nuestros productos
+            <Link href="/#contacto" className={styles.ctaPrimary}>
+              {t("ctaPrimary")}
+            </Link>
+            <Link href="/#productos" className={styles.ctaSecondary}>
+              {t("ctaSecondary")}
               <span className={styles.arrow} aria-hidden="true">
                 →
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -30,17 +33,17 @@ export default function Hero() {
           <div className={`${styles.card} ${styles.cardGreen}`}>
             <span className={styles.cardIcon}>⚡</span>
             <p className={styles.cardName}>Landing Factory</p>
-            <p className={styles.cardDesc}>Landing pages que convierten</p>
+            <p className={styles.cardDesc}>{t("cardLandingFactory")}</p>
           </div>
           <div className={`${styles.card} ${styles.cardAmber}`}>
             <span className={styles.cardIcon}>📋</span>
             <p className={styles.cardName}>FacturApp</p>
-            <p className={styles.cardDesc}>Facturación simple para tu negocio</p>
+            <p className={styles.cardDesc}>{t("cardFacturApp")}</p>
           </div>
           <div className={`${styles.card} ${styles.cardDark}`}>
             <span className={styles.cardIcon}>🤖</span>
             <p className={styles.cardName}>BotSeller</p>
-            <p className={styles.cardDesc}>Ventas automatizadas por WhatsApp</p>
+            <p className={styles.cardDesc}>{t("cardBotSeller")}</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,237 @@
+{
+  "nav": {
+    "products": "Products",
+    "about": "About me",
+    "contact": "Contact",
+    "startProject": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "ariaLabel": "Main navigation"
+  },
+  "hero": {
+    "eyebrow": "Digital Agency · Buenos Aires, Argentina",
+    "title": "We make your digital presence <em>work for you</em>",
+    "subtitle": "We design and develop landing pages, web applications and digital tools that turn visitors into real customers.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See our products",
+    "cardLandingFactory": "Landing pages that convert",
+    "cardFacturApp": "Simple billing for your business",
+    "cardBotSeller": "Automated sales via WhatsApp"
+  },
+  "products": {
+    "eyebrow": "What we do",
+    "title": "Our products",
+    "subtitle": "Three tools designed to solve real problems for digital businesses.",
+    "viewProjects": "View projects →",
+    "landingFactoryTagline": "Your web presence, tailored and hassle-free",
+    "landingFactoryDesc": "We create professional landing pages that tell your story and turn visitors into customers. Unique design, ultra-fast load times and copy that communicates your real value.",
+    "landingFactoryStatus": "Active",
+    "facturAppTagline": "Invoicing without the hassle",
+    "facturAppDesc": "A simple, fast and intuitive app to manage your invoices and finances. Built for entrepreneurs and small businesses who want to get organized without wasting time.",
+    "facturAppStatus": "In development",
+    "botSellerTagline": "Your salesperson that never sleeps",
+    "botSellerDesc": "Smart WhatsApp agents that handle inquiries, take orders and manage sales automatically, 24 hours a day, 7 days a week.",
+    "botSellerStatus": "Coming soon"
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "Hi, I'm <em>Pablo</em>",
+    "bio1": "Software Engineer based in Buenos Aires. I come from the B2B financial world — over a decade in corporate collections, SAP migrations and account management — and since 2024 I work full-time as a Frontend Engineer at Insight Delta.",
+    "bio2": "That combination is what makes PGO Solutions different: I understand the business from the inside. I don't just build what you ask for, I understand why you need it.",
+    "linkedinLabel": "View LinkedIn profile",
+    "githubLabel": "View GitHub profile"
+  },
+  "contact": {
+    "eyebrow": "Let's work together",
+    "title": "Ready to start <em>your project</em>?",
+    "subtitle": "Tell me what you need and we'll get back to you shortly. No forms, no runaround.",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "locationLabel": "Location",
+    "location": "Buenos Aires, Argentina",
+    "note": "We read every inquiry carefully and respond with concrete solutions for your project."
+  },
+  "footer": {
+    "tagline": "Digital solutions that drive real businesses.",
+    "navTitle": "Navigation",
+    "productsTitle": "Products",
+    "home": "Home",
+    "copyright": "© {year} PGO Solutions. All rights reserved.",
+    "footerNavLabel": "Footer navigation",
+    "productsNavLabel": "Products navigation"
+  },
+  "whatsapp": {
+    "ariaLabel": "Contact via WhatsApp"
+  },
+  "sobreMi": {
+    "metaTitle": "About me | PGO Solutions",
+    "metaDesc": "Meet Pablo Olivera: Software Engineer, over a decade in B2B finance and the founder behind PGO Solutions.",
+    "backLink": "← Back to home",
+    "eyebrow": "About me",
+    "title": "Hi, I'm <em>Pablo</em>",
+    "bio1": "Software Engineer with 3+ years in the tech world and over a decade before that in the corporate sector. I work at Insight Delta building products end to end: frontend architecture, AWS infrastructure and CI/CD automation.",
+    "bio2": "I come from the B2B finance world — collections, credit, SAP migrations — and that background gives me something few developers have: I understand the business from the inside. PGO Solutions was born from that combination: software development with real business vision.",
+    "trajectoryEyebrow": "My journey",
+    "trajectoryTitle": "The path that brought me <em>here</em>",
+    "skillsEyebrow": "Tools",
+    "skillsTitle": "What I work with",
+    "frontendLabel": "Frontend & Mobile",
+    "backendLabel": "Backend & Cloud",
+    "testingLabel": "Testing & Quality",
+    "ctaTitle": "Want to work together?",
+    "ctaSubtitle": "If you have a project in mind, I'd love to hear about it.",
+    "ctaPrimary": "Start a conversation",
+    "ctaSecondary": "See our products →",
+    "linkedinLabel": "View LinkedIn profile",
+    "githubLabel": "View GitHub profile",
+    "trajectory": [
+      {
+        "year": "2010",
+        "title": "The corporate world",
+        "description": "Electronics technician graduate, with an innate curiosity for technology but paths led me to the financial world. I started as a collections analyst at Medife, developing a deep understanding of B2B business that is my biggest differentiator today."
+      },
+      {
+        "year": "2017",
+        "title": "First technology bridge",
+        "description": "At Lincoln Electric I was the bridge between the finance department and SAP consultants during the migration from Tango to SAP. For the first time, my technical side found a real place in the corporate world. I repeated this years later at Agrofina."
+      },
+      {
+        "year": "2022",
+        "title": "The definitive turn",
+        "description": "The technical curiosity I'd had for years came back strong. I started learning web development self-taught: React, TypeScript, Next.js. Learning by doing, as always. I'm now formalizing that path with a Full Stack Development Diploma."
+      },
+      {
+        "year": "2024",
+        "title": "Full-time Software Engineer",
+        "description": "I made the definitive leap to the tech industry as a Frontend Engineer at Insight Delta. Product architecture, CI/CD on AWS, testing leadership with Vitest, integration with Ruby on Rails. From the financial world to tech, without losing sight of the business."
+      },
+      {
+        "year": "Today",
+        "title": "PGO Solutions",
+        "description": "Born as a side project that unites the best of both worlds: the B2B knowledge from over a decade in the corporate sector and the technical skills I built along the way. I offer custom development for companies that know what they need because I was on the other side of the table."
+      }
+    ]
+  },
+  "botSeller": {
+    "metaTitle": "BotSeller | PGO Solutions",
+    "metaDesc": "Smart WhatsApp agents that handle, sell and manage orders automatically 24 hours a day. Coming soon from PGO Solutions.",
+    "backLink": "← Back to products",
+    "badgeStatus": "Coming soon",
+    "heroTitle": "Your salesperson that <em>never sleeps</em>",
+    "heroSubtitle": "Smart WhatsApp agents that handle inquiries, take orders and manage sales automatically. You rest, the bot works.",
+    "heroCta": "Notify me when it's ready",
+    "heroNote": "We respond via WhatsApp within 24 hours",
+    "featuresEyebrow": "What it will do for you",
+    "featuresTitle": "Sell while <em>you do other things</em>",
+    "featuresSubtitle": "BotSeller takes care of customer service so you can focus on what matters.",
+    "statusBadge": "On the way",
+    "statusTitle": "Coming soon",
+    "statusDesc": "BotSeller is in the design and development stage. If you want to be a beta tester or simply receive updates when it's ready, let us know.",
+    "statusCta": "Sign me up as beta tester",
+    "features": [
+      {
+        "icon": "💬",
+        "title": "Automatic 24/7 support",
+        "description": "Answer customer inquiries at any time, without you having to be present."
+      },
+      {
+        "icon": "🛒",
+        "title": "Order taking",
+        "description": "The bot guides the customer through the catalog, takes the order and registers it automatically."
+      },
+      {
+        "icon": "💳",
+        "title": "Integrated payment links",
+        "description": "Send payment links at the end of the conversation, without leaving WhatsApp."
+      },
+      {
+        "icon": "📦",
+        "title": "Stock management",
+        "description": "Check availability in real time and avoid confirming orders you can't fulfill."
+      },
+      {
+        "icon": "📊",
+        "title": "Sales reports",
+        "description": "See which products sell the most, at what times, and who your frequent customers are."
+      },
+      {
+        "icon": "🔧",
+        "title": "No-code setup",
+        "description": "Customize messages, catalog and flows from a simple panel, no coding required."
+      }
+    ]
+  },
+  "facturApp": {
+    "metaTitle": "FacturApp | PGO Solutions",
+    "metaDesc": "Simple, fast and intuitive invoicing for entrepreneurs and small businesses. In development by PGO Solutions.",
+    "backLink": "← Back to products",
+    "badgeStatus": "In development",
+    "heroTitle": "Invoice without <em>the hassle</em>",
+    "heroSubtitle": "A simple, fast and intuitive app to manage your invoices and finances. Built for entrepreneurs and small businesses who want to get organized without wasting time.",
+    "heroCta": "Notify me when it's ready",
+    "heroNote": "We respond via WhatsApp within 24 hours",
+    "featuresEyebrow": "What it will include",
+    "featuresTitle": "Everything you need, <em>nothing you don't</em>",
+    "featuresSubtitle": "FacturApp is designed so you can start invoicing in 5 minutes.",
+    "statusBadge": "Actively in development",
+    "statusTitle": "We're building it",
+    "statusDesc": "FacturApp is in active development. If you want to be among the first to use it when it launches, leave us your contact and we'll notify you before anyone else.",
+    "statusCta": "I want to be among the first",
+    "features": [
+      {
+        "icon": "📄",
+        "title": "Invoices in seconds",
+        "description": "Create and send professional invoices in under a minute, no complicated forms."
+      },
+      {
+        "icon": "👥",
+        "title": "Client management",
+        "description": "Save your client portfolio and access their billing history with one click."
+      },
+      {
+        "icon": "📊",
+        "title": "Clear reports",
+        "description": "View your income and monthly billing in a simple and organized way."
+      },
+      {
+        "icon": "📱",
+        "title": "100% from your phone",
+        "description": "Designed mobile-first so you can invoice from wherever you are."
+      },
+      {
+        "icon": "🔒",
+        "title": "Secure and reliable",
+        "description": "Your data protected, with automatic backups and access only for you."
+      },
+      {
+        "icon": "⚡",
+        "title": "No learning curve",
+        "description": "Interface designed for non-technical users. If you can use WhatsApp, you can use FacturApp."
+      }
+    ]
+  },
+  "landingFactory": {
+    "metaTitle": "Landing Factory | PGO Solutions",
+    "metaDesc": "Professional landing pages that convert visitors into customers. See the projects completed by PGO Solutions.",
+    "backLink": "← Back to products",
+    "heroTitle": "Landing pages that <em>truly convert</em>",
+    "heroSubtitle": "We design and develop professional landing pages with strategic copy, custom design and optimized speed. Your first impression matters.",
+    "heroCta": "I want my landing page",
+    "feature1Title": "Custom design",
+    "feature1Desc": "Every page is unique, crafted for your business and your audience.",
+    "feature2Title": "Ultra-fast load",
+    "feature2Desc": "Performance optimization from the first deploy.",
+    "feature3Title": "Copy that converts",
+    "feature3Desc": "Strategic text that communicates your value and drives action.",
+    "showcaseEyebrow": "Our work",
+    "showcaseTitle": "Companies that trusted PGO Solutions",
+    "showcaseSubtitle": "Every project starts with a conversation. We understand the business before writing a single line of code.",
+    "viewSite": "Visit site →",
+    "ctaTitle": "Want your own landing page?",
+    "ctaSubtitle": "Tell me about your project and I'll get back to you within 24 hours.",
+    "ctaButton": "Start a project",
+    "fletrosFerroDesc": "Freight, moving and cargo transport in Luján and across the country.",
+    "fletrosFerroSector": "Transport & Logistics",
+    "siteAlt": "Website of {name}"
+  }
+}

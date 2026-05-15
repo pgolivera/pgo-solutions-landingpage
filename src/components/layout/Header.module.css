@@ -176,6 +176,27 @@
   color: #fff;
 }
 
+.localeSwitcher {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.localeSwitcher:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+}
+
 /* — Desktop — */
 @media (min-width: 768px) {
   .menuButton {

@@ -1,0 +1,237 @@
+{
+  "nav": {
+    "products": "Productos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "startProject": "Empezar proyecto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "ariaLabel": "Navegación principal"
+  },
+  "hero": {
+    "eyebrow": "Agencia Digital · Buenos Aires, Argentina",
+    "title": "Hacemos que tu presencia digital <em>trabaje para vos</em>",
+    "subtitle": "Diseñamos y desarrollamos landing pages, aplicaciones web y herramientas digitales que convierten visitantes en clientes reales.",
+    "ctaPrimary": "Iniciar un proyecto",
+    "ctaSecondary": "Ver nuestros productos",
+    "cardLandingFactory": "Landing pages que convierten",
+    "cardFacturApp": "Facturación simple para tu negocio",
+    "cardBotSeller": "Ventas automatizadas por WhatsApp"
+  },
+  "products": {
+    "eyebrow": "Lo que hacemos",
+    "title": "Nuestros productos",
+    "subtitle": "Tres herramientas diseñadas para resolver problemas reales de negocios digitales.",
+    "viewProjects": "Ver proyectos →",
+    "landingFactoryTagline": "Tu presencia web, a medida y sin vueltas",
+    "landingFactoryDesc": "Creamos landing pages profesionales que cuentan tu historia y convierten visitantes en clientes. Diseño único, carga ultra rápida y copy que comunica tu valor real.",
+    "landingFactoryStatus": "Activo",
+    "facturAppTagline": "Facturación sin complicaciones",
+    "facturAppDesc": "Una aplicación simple, rápida e intuitiva para gestionar tus facturas y finanzas. Diseñada para emprendedores y pequeñas empresas que quieren ordenarse sin perder tiempo.",
+    "facturAppStatus": "En desarrollo",
+    "botSellerTagline": "Tu vendedor que nunca duerme",
+    "botSellerDesc": "Agentes de WhatsApp inteligentes que atienden consultas, toman pedidos y gestionan ventas de forma automática las 24 horas, los 7 días de la semana.",
+    "botSellerStatus": "Próximamente"
+  },
+  "about": {
+    "eyebrow": "Sobre mí",
+    "title": "Hola, soy <em>Pablo</em>",
+    "bio1": "Software Engineer radicado en Buenos Aires. Vengo del mundo financiero B2B — más de una década en cobranzas corporativas, migraciones SAP y gestión de cuentas — y desde 2024 trabajo full-time como Frontend Engineer en Insight Delta.",
+    "bio2": "Esa combinación es lo que hace diferente a PGO Solutions: entiendo el negocio desde adentro. No solo construyo lo que me pedís, entiendo por qué lo necesitás.",
+    "linkedinLabel": "Ver perfil de LinkedIn",
+    "githubLabel": "Ver perfil de GitHub"
+  },
+  "contact": {
+    "eyebrow": "Trabajemos juntos",
+    "title": "¿Arrancamos con <em>tu proyecto</em>?",
+    "subtitle": "Contame qué necesitás y en breve nos comunicamos. Sin formularios, sin vueltas.",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "locationLabel": "Ubicación",
+    "location": "Buenos Aires, Argentina",
+    "note": "Leemos cada consulta con atención y te respondemos con soluciones concretas para tu proyecto."
+  },
+  "footer": {
+    "tagline": "Soluciones digitales que impulsan negocios reales.",
+    "navTitle": "Navegación",
+    "productsTitle": "Productos",
+    "home": "Inicio",
+    "copyright": "© {year} PGO Solutions. Todos los derechos reservados.",
+    "footerNavLabel": "Footer navigation",
+    "productsNavLabel": "Products navigation"
+  },
+  "whatsapp": {
+    "ariaLabel": "Contactar por WhatsApp"
+  },
+  "sobreMi": {
+    "metaTitle": "Sobre mí | PGO Solutions",
+    "metaDesc": "Conocé a Pablo Olivera: Software Engineer, más de una década en finanzas B2B y el fundador detrás de PGO Solutions.",
+    "backLink": "← Volver al inicio",
+    "eyebrow": "Sobre mí",
+    "title": "Hola, soy <em>Pablo</em>",
+    "bio1": "Software Engineer con más de 3 años en el mundo tech y más de una década antes en el sector corporativo. Trabajo en Insight Delta construyendo productos de principio a fin: arquitectura frontend, infraestructura en AWS y automatización de CI/CD.",
+    "bio2": "Vengo del mundo de las finanzas B2B — cobranzas, crédito, migraciones SAP — y ese recorrido me da algo que pocos developers tienen: entiendo el negocio desde adentro. PGO Solutions nació de esa combinación: desarrollo de software con visión de negocio real.",
+    "trajectoryEyebrow": "Mi recorrido",
+    "trajectoryTitle": "El camino hasta <em>acá</em>",
+    "skillsEyebrow": "Herramientas",
+    "skillsTitle": "Con qué trabajo",
+    "frontendLabel": "Frontend & Mobile",
+    "backendLabel": "Backend & Cloud",
+    "testingLabel": "Testing & Calidad",
+    "ctaTitle": "¿Trabajamos juntos?",
+    "ctaSubtitle": "Si tenés un proyecto en mente, me encantaría escucharte.",
+    "ctaPrimary": "Iniciar una conversación",
+    "ctaSecondary": "Ver nuestros productos →",
+    "linkedinLabel": "Ver perfil de LinkedIn",
+    "githubLabel": "Ver perfil de GitHub",
+    "trajectory": [
+      {
+        "year": "2010",
+        "title": "El mundo corporativo",
+        "description": "Egresado técnico electrónico, con curiosidad innata por la tecnología pero los caminos me llevaron al mundo financiero. Empecé como analista de cobranzas en Medife, desarrollando una visión profunda del negocio B2B que hoy es mi mayor diferenciador."
+      },
+      {
+        "year": "2017",
+        "title": "Primer puente tecnológico",
+        "description": "En Lincoln Electric fui el nexo entre el área de finanzas y los consultores de SAP durante la migración de Tango a SAP. Por primera vez, mi costado técnico encontró un lugar real en el mundo corporativo. Lo repetí años después en Agrofina."
+      },
+      {
+        "year": "2022",
+        "title": "El giro definitivo",
+        "description": "La curiosidad técnica que llevaba años dormida volvió con fuerza. Empecé a aprender desarrollo web de forma autodidacta: React, TypeScript, Next.js. Aprendiendo mientras hacía, como siempre. Hoy formalizo ese camino con una Diplomatura en Desarrollo Full Stack."
+      },
+      {
+        "year": "2024",
+        "title": "Software Engineer de tiempo completo",
+        "description": "Di el salto definitivo a la industria tech como Frontend Engineer en Insight Delta. Arquitectura de productos, CI/CD en AWS, liderazgo de testing con Vitest, integración con Ruby on Rails. Del mundo financiero al tech, sin perder de vista el negocio."
+      },
+      {
+        "year": "Hoy",
+        "title": "PGO Solutions",
+        "description": "Nació como un proyecto paralelo que une lo mejor de los dos mundos: el conocimiento B2B de más de una década en el sector corporativo y las habilidades técnicas que fui construyendo. Ofrezco desarrollo a medida para empresas que saben lo que necesitan porque yo estuve del otro lado del mostrador."
+      }
+    ]
+  },
+  "botSeller": {
+    "metaTitle": "BotSeller | PGO Solutions",
+    "metaDesc": "Agentes de WhatsApp inteligentes que atienden, venden y gestionan pedidos de forma automática las 24 horas. Próximamente por PGO Solutions.",
+    "backLink": "← Volver a productos",
+    "badgeStatus": "Próximamente",
+    "heroTitle": "Tu vendedor que <em>nunca duerme</em>",
+    "heroSubtitle": "Agentes de WhatsApp inteligentes que atienden consultas, toman pedidos y gestionan ventas de forma automática. Vos descansás, el bot trabaja.",
+    "heroCta": "Avisame cuando esté listo",
+    "heroNote": "Respondemos por WhatsApp en menos de 24 h",
+    "featuresEyebrow": "Qué va a hacer por vos",
+    "featuresTitle": "Vendé mientras <em>hacés otra cosa</em>",
+    "featuresSubtitle": "BotSeller se encarga de la atención al cliente para que vos te enfoques en lo que importa.",
+    "statusBadge": "En camino",
+    "statusTitle": "Se viene pronto",
+    "statusDesc": "BotSeller está en etapa de diseño y desarrollo. Si querés ser beta tester o simplemente recibir novedades cuando esté listo, avisanos.",
+    "statusCta": "Anotarme como beta tester",
+    "features": [
+      {
+        "icon": "💬",
+        "title": "Atención automática 24/7",
+        "description": "Respondé consultas de clientes en cualquier momento, sin que tengas que estar presente."
+      },
+      {
+        "icon": "🛒",
+        "title": "Toma de pedidos",
+        "description": "El bot guía al cliente por el catálogo, toma el pedido y lo registra automáticamente."
+      },
+      {
+        "icon": "💳",
+        "title": "Links de pago integrados",
+        "description": "Enviá links de pago al finalizar la conversación, sin salir de WhatsApp."
+      },
+      {
+        "icon": "📦",
+        "title": "Gestión de stock",
+        "description": "Consultá disponibilidad en tiempo real y evitá confirmar pedidos que no podés cumplir."
+      },
+      {
+        "icon": "📊",
+        "title": "Reportes de ventas",
+        "description": "Visualizá qué productos se venden más, en qué horarios y quiénes son tus clientes frecuentes."
+      },
+      {
+        "icon": "🔧",
+        "title": "Configuración sin código",
+        "description": "Personalizá los mensajes, el catálogo y los flujos desde un panel simple, sin programar nada."
+      }
+    ]
+  },
+  "facturApp": {
+    "metaTitle": "FacturApp | PGO Solutions",
+    "metaDesc": "Facturación simple, rápida e intuitiva para emprendedores y pequeñas empresas. En desarrollo por PGO Solutions.",
+    "backLink": "← Volver a productos",
+    "badgeStatus": "En desarrollo",
+    "heroTitle": "Facturá sin <em>complicaciones</em>",
+    "heroSubtitle": "Una aplicación simple, rápida e intuitiva para gestionar tus facturas y finanzas. Diseñada para emprendedores y pequeñas empresas que quieren ordenarse sin perder tiempo.",
+    "heroCta": "Avisame cuando esté lista",
+    "heroNote": "Respondemos por WhatsApp en menos de 24 h",
+    "featuresEyebrow": "Qué va a incluir",
+    "featuresTitle": "Todo lo que necesitás, <em>nada que no</em>",
+    "featuresSubtitle": "FacturApp está pensada para que en 5 minutos ya estés facturando.",
+    "statusBadge": "En desarrollo activo",
+    "statusTitle": "Estamos construyéndola",
+    "statusDesc": "FacturApp está en desarrollo activo. Si querés ser de los primeros en usarla cuando salga, dejanos tu contacto y te avisamos antes que a nadie.",
+    "statusCta": "Quiero ser de los primeros",
+    "features": [
+      {
+        "icon": "📄",
+        "title": "Facturas en segundos",
+        "description": "Creá y enviá facturas profesionales en menos de un minuto, sin formularios complicados."
+      },
+      {
+        "icon": "👥",
+        "title": "Gestión de clientes",
+        "description": "Guardá tu cartera de clientes y accedé a su historial de facturación con un clic."
+      },
+      {
+        "icon": "📊",
+        "title": "Reportes claros",
+        "description": "Visualizá tus ingresos y facturación mensual de forma simple y ordenada."
+      },
+      {
+        "icon": "📱",
+        "title": "100% desde el celular",
+        "description": "Diseñada mobile-first para que puedas facturar desde donde estés."
+      },
+      {
+        "icon": "🔒",
+        "title": "Segura y confiable",
+        "description": "Tus datos protegidos, con backups automáticos y acceso solo para vos."
+      },
+      {
+        "icon": "⚡",
+        "title": "Sin curva de aprendizaje",
+        "description": "Interfaz pensada para quienes no son técnicos. Si podés usar WhatsApp, podés usar FacturApp."
+      }
+    ]
+  },
+  "landingFactory": {
+    "metaTitle": "Landing Factory | PGO Solutions",
+    "metaDesc": "Landing pages profesionales que convierten visitantes en clientes. Conocé los proyectos realizados por PGO Solutions.",
+    "backLink": "← Volver a productos",
+    "heroTitle": "Landing pages que <em>convierten de verdad</em>",
+    "heroSubtitle": "Diseñamos y desarrollamos páginas de aterrizaje profesionales con copy estratégico, diseño a medida y velocidad optimizada. Tu primera impresión importa.",
+    "heroCta": "Quiero mi landing page",
+    "feature1Title": "Diseño a medida",
+    "feature1Desc": "Cada página es única, pensada para tu negocio y tu audiencia.",
+    "feature2Title": "Carga ultra rápida",
+    "feature2Desc": "Optimización de performance desde el primer deploy.",
+    "feature3Title": "Copy que convierte",
+    "feature3Desc": "Texto estratégico que comunica tu valor y empuja a la acción.",
+    "showcaseEyebrow": "Nuestro trabajo",
+    "showcaseTitle": "Empresas que confiaron en PGO Solutions",
+    "showcaseSubtitle": "Cada proyecto comienza con una conversación. Entendemos el negocio antes de escribir una sola línea de código.",
+    "viewSite": "Ver sitio →",
+    "ctaTitle": "¿Querés tu propia landing?",
+    "ctaSubtitle": "Contame tu proyecto y te respondo en menos de 24 horas.",
+    "ctaButton": "Iniciar un proyecto",
+    "fletrosFerroDesc": "Fletes, mudanzas y transporte de cargas en Luján y todo el país.",
+    "fletrosFerroSector": "Transporte & Logística",
+    "siteAlt": "Sitio web de {name}"
+  }
+}

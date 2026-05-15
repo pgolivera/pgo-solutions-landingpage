@@ -1,21 +1,24 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import styles from "./Footer.module.css";
 
-const NAV_LINKS = [
-  { href: "/", label: "Inicio" },
-  { href: "/#productos", label: "Productos" },
-  { href: "/sobre-mi", label: "Sobre mí" },
-  { href: "/#contacto", label: "Contacto" },
-];
-
 const PRODUCTS = [
-  { name: "Landing Factory", href: "/productos/landing-factory" },
-  { name: "FacturApp", href: "/productos/facturapp" },
-  { name: "BotSeller", href: "/productos/botseller" },
+  { name: "Landing Factory", href: "/productos/landing-factory" as const },
+  { name: "FacturApp", href: "/productos/facturapp" as const },
+  { name: "BotSeller", href: "/productos/botseller" as const },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
   const currentYear = new Date().getFullYear();
+
+  const navLinks = [
+    { href: "/" as const, label: t("home") },
+    { href: "/#productos" as const, label: tNav("products") },
+    { href: "/sobre-mi" as const, label: tNav("about") },
+    { href: "/#contacto" as const, label: tNav("contact") },
+  ];
 
   return (
     <footer className={styles.footer}>
@@ -27,14 +30,14 @@ export default function Footer() {
               <span className={styles.logoDot}>·</span>
               <span className={styles.logoWord}>Solutions</span>
             </span>
-            <p className={styles.brandText}>Soluciones digitales que impulsan negocios reales.</p>
+            <p className={styles.brandText}>{t("tagline")}</p>
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Navegación</h4>
-            <nav className={styles.columnLinks} aria-label="Footer navigation">
-              {NAV_LINKS.map((link) => (
-                <Link key={link.label} href={link.href} className={styles.link}>
+            <h4 className={styles.columnTitle}>{t("navTitle")}</h4>
+            <nav className={styles.columnLinks} aria-label={t("footerNavLabel")}>
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href} className={styles.link}>
                   {link.label}
                 </Link>
               ))}
@@ -42,8 +45,8 @@ export default function Footer() {
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Productos</h4>
-            <nav className={styles.columnLinks} aria-label="Products navigation">
+            <h4 className={styles.columnTitle}>{t("productsTitle")}</h4>
+            <nav className={styles.columnLinks} aria-label={t("productsNavLabel")}>
               {PRODUCTS.map((product) => (
                 <Link key={product.name} href={product.href} className={styles.link}>
                   {product.name}
@@ -54,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copyright}>© {currentYear} PGO Solutions. Todos los derechos reservados.</p>
+          <p className={styles.copyright}>{t("copyright", { year: currentYear })}</p>
           <a href="mailto:contacto@pgosolutions.com" className={styles.contactLink}>
             contacto@pgosolutions.com
           </a>

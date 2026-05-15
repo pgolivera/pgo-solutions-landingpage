@@ -1,13 +1,16 @@
+import { getTranslations } from "next-intl/server";
 import styles from "./WhatsAppFAB.module.css";
 
-export default function WhatsAppFAB() {
+export default async function WhatsAppFAB() {
+  const t = await getTranslations("whatsapp");
+
   return (
     <a
       href="https://wa.me/5491155236820?text=Hola!%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos"
       className={styles.fab}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
+      aria-label={t("ariaLabel")}
     >
       <span className={styles.pulse} aria-hidden="true" />
       <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
